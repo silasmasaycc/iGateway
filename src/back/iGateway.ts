@@ -57,14 +57,7 @@ export const getInfoIgateway = async (igatewayPort:string) => {
     // Retirado para uso no teste de Dev Frontend
     //const ret = await iGateway.get('http://' + window.location.hostname + ':' + igatewayPort)
 
-    // Respostas fixas para teste Dev Frontend
-    // Resposta 1 para exibir tela de login/vinculação
-    //const ret = {
-    //  status :  200,
-    //  data : {"cnpjCpf":null,"placeId":"ALL","places":[],"statusServidorIPT":"OFFLINE","versionIgateway":"Beta 0.0.02","statusIgateway":"UNLINKED","failsOnDay":0,"terminals":[],"marksLastDays":{"dates":["20/04","21/04","22/04","23/04","24/04","25/04","26/04"]},"totalPedestrians":0}
-    //}
-
-    // Resposta 2 para exibir tela do dashboard e do log
+    // Resposta fixa para teste Dev Frontend
     const ret = {
       status :  200,
       data : {"cnpjCpf":"31331118000126","placeId":"ALL","places":[],"statusServidorIPT":"ONLINE","versionIgateway":"Beta 0.0.02","statusIgateway":"RUN","failsOnDay":5,"terminals":[{"CODTERMINAL":1,"DESCRICAO":"Terminal MP","LOGIN":"admin","LOGIN_SENHA":"admin","IDENTIFICA_DISPOSITIVO":"","UF":"AM","UF_COMPLEMENTO":"GMT-05:00","MARCATERMINAL":"CONTROLID","MODELOTERMINAL":"IDFACE","ENDERECOIP":"null","PORTA_TCPIP":"null","IDLOCAL":"null","QTDPEDESTRES":2,"SESSAO":"null","STATUS":"ERRO"},{"CODTERMINAL":2,"DESCRICAO":"IDFace","LOGIN":"admin","LOGIN_SENHA":"admin","IDENTIFICA_DISPOSITIVO":"0M0200/000383","UF":"null","UF_COMPLEMENTO":"null","MARCATERMINAL":"CONTROLID","MODELOTERMINAL":"IDFACE","ENDERECOIP":"192.168.101.101","PORTA_TCPIP":"80","IDLOCAL":"null","QTDPEDESTRES":4,"SESSAO":"ViGl3B7hrn120cTilcGtPmGJ","STATUS":"ONLINE"}],"marksLastDays":{"1":[0,0,0,0,0,0,0],"2":[0,0,0,0,0,0,0],"dates":["20/04","21/04","22/04","23/04","24/04","25/04","26/04"]},"totalPedestrians":5}

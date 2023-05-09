@@ -19,7 +19,7 @@ const RootPage = () => {
     if (['RUN','STOP'].includes(statusIgateway as string)) router.push('/dashboard')
     if (statusIgateway=='UNLINKED') router.push('/login')
     if (statusIgateway=='ERRO') router.push('/errorIgateway')
-  },[statusIgateway])
+  },[statusIgateway, router])
 
   return <></>
 }
