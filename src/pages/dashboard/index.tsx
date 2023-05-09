@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+//import { useEffect } from 'react'
 
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
@@ -13,14 +13,14 @@ import Table from 'src/views/dashboard/Table'
 import InformationsCard from 'src/views/dashboard/InformationsCard'
 import WeeklyOverview from 'src/views/dashboard/WeeklyOverview'
 
-import { useRouter } from 'next/router'
+//import { useRouter } from 'next/router'
 import { useSettings } from 'src/@core/hooks/useSettings'
 import { defaultStatusIGateway } from 'src/@core/context/settingsContext'
 
 const Dashboard = () => {
 
-  const router = useRouter()
-  const { infoIgateway, reloadInfoIgateway } = useSettings()
+  //const router = useRouter()
+  const { infoIgateway/*, reloadInfoIgateway */} = useSettings()
 
   const {
     statusServidorIPT,
@@ -32,18 +32,18 @@ const Dashboard = () => {
     totalPedestrians
   } = infoIgateway || defaultStatusIGateway
 
-  useEffect(()=>{
-    if (statusIgateway=='UNLINKED') router.push('/login')
-    if (statusIgateway=='ERRO') router.push('/errorIgateway')
-  },[statusIgateway])
+//  useEffect(()=>{
+//    if (statusIgateway=='UNLINKED') router.push('/login')
+//    if (statusIgateway=='ERRO') router.push('/errorIgateway')
+//  },[statusIgateway])
 
-  useEffect(() => {
+//  useEffect(() => {
      //const interval = setInterval(async() => {
-        reloadInfoIgateway()
+//        reloadInfoIgateway()
      //}, 5000);
 
      //return () => clearInterval(interval);
-  }, []);
+//  }, []);
 
   return (
     infoIgateway && ['RUN','STOP'].includes(infoIgateway.statusIgateway || '')?

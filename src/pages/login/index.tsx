@@ -1,5 +1,5 @@
 // ** React Imports
-import { ReactNode, useEffect, useState } from 'react'
+import { ReactNode/*, useEffect*/, useState } from 'react'
 
 // ** Next Imports
 import { useRouter } from 'next/router'
@@ -54,12 +54,12 @@ const LoginPage = () => {
 
   const { infoIgateway, igatewayPort, reloadInfoIgateway } = useSettings()
 
-  const { statusIgateway} = infoIgateway
+//  const { statusIgateway} = infoIgateway
 
-  useEffect(()=>{
-    if (['RUN','STOP'].includes(statusIgateway as string)) router.push('/dashboard')
-    if (statusIgateway=='ERRO') router.push('/errorIgateway')
-  },[statusIgateway])
+//  useEffect(()=>{
+//    if (['RUN','STOP'].includes(statusIgateway as string)) router.push('/dashboard')
+//    if (statusIgateway=='ERRO') router.push('/errorIgateway')
+//  },[statusIgateway])
 
   const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
