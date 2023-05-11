@@ -19,10 +19,12 @@ import { ApexOptions } from 'apexcharts'
 // ** Custom Components Imports
 import ReactApexChart from 'src/@core/components/react-apexcharts'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import CardLayout from 'src/@core/layouts/CardLayout'
 
-const WeeklyOverview = (props:any) => {
+const WeeklyOverview = (props: any) => {
 
   const { marksLastDays, terminals } = props
+
   // ** Hook
   const theme = useTheme()
 
@@ -41,7 +43,7 @@ const WeeklyOverview = (props:any) => {
 
   const chartData: any = []
   const data = [0, 0, 0, 0, 0, 0, 0]
-  for (let terminal of terminals) {
+  for (const terminal of terminals) {
     chartData.push({
       name: terminal.DESCRICAO,
       type: 'column',
@@ -192,18 +194,19 @@ const WeeklyOverview = (props:any) => {
   }
 
   return (
-    <Card>
-      <CardHeader
-        title='Marcações nos últimos 7 dias'
-        sx = {{pb: '0px'}}
-        titleTypographyProps={{
-          sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' }
-        }}
-      />
+    <CardLayout header={{
+      title: 'Marcações nos últimos 7 dias',
+      sx: { pb: '0px' },
+      titleTypographyProps: {
+        sx: {
+          lineHeight: '2rem !important', letterSpacing: '0.15px !important'
+        }
+      }
+    }}>
       <CardContent sx={{ '& .apexcharts-xcrosshairs.apexcharts-active': { opacity: 0 } }}>
         <ReactApexChart type='bar' series={chartData} options={chartOptions} height={300} />
       </CardContent>
-    </Card>
+    </CardLayout>
   )
 }
 

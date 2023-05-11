@@ -44,3 +44,12 @@ export type LayoutProps = {
 export type BlankLayoutProps = {
   children: ReactNode
 }
+
+export type CardLayoutProps = {
+  children: ReactNode;
+  header: {
+    title: string;
+    sx?: object;
+    titleTypographyProps?: object
+  }
+}

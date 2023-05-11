@@ -39,7 +39,7 @@ const AppBarContent = (props: Props) => {
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
       <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
-        <Typography variant={'h5'}>iGateway Dashboard</Typography>
+        <img src="/images/pages/logo.png" alt="logo" />
       </Box>
       <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
         {!hiddenMd && <Tooltip title='CNPJ/CPF da conta' arrow>

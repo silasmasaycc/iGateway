@@ -12,7 +12,9 @@ import TableContainer from '@mui/material/TableContainer'
 
 // ** Types Imports
 import { ThemeColor } from 'src/@core/layouts/types'
-import CardHeader from '@mui/material/CardHeader'
+import CardLayout from 'src/@core/layouts/CardLayout'
+
+// import CardHeader from '@mui/material/CardHeader'
 
 interface RowType {
   CODTERMINAL: number,
@@ -31,28 +33,27 @@ interface StatusObj {
 }
 
 const statusObj: StatusObj = {
-  ONLINE : { color: 'success' },
-  ERRO : { color: 'error' },
-  ERRO_NS : { color: 'error' },
-  ERRO_SENHA : { color: 'warning' },
-  DESCONHECIDO : { color: 'primary' },
+  ONLINE: { color: 'success' },
+  ERRO: { color: 'error' },
+  ERRO_NS: { color: 'error' },
+  ERRO_SENHA: { color: 'warning' },
+  DESCONHECIDO: { color: 'primary' },
   Livre: { color: 'info' },
 }
 
-const DashboardTable = (props:any) => {
+const DashboardTable = (props: any) => {
   const { terminals } = props
 
   const rows = terminals
 
   return (
-    <Card>
-      <CardHeader
-        title='Coletores'
-        sx={{pb:'0px'}}
-        titleTypographyProps={{
-          sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' }
-        }}
-      />
+    <CardLayout header={{
+      title: 'Coletores',
+      sx: { pb: '0px' },
+      titleTypographyProps: {
+        sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' }
+      }
+    }}>
       <TableContainer>
         <Table sx={{ minWidth: 800 }} aria-label='table in dashboard'>
           <TableHead>
@@ -67,7 +68,8 @@ const DashboardTable = (props:any) => {
           </TableHead>
           <TableBody>
             {rows.map((row: RowType) => {
-              if (!['ONLINE','ERRO','ERRO_SENHA','ERRO_NS'].includes(row.STATUS)) row.STATUS='DESCONHECIDO';
+              if (!['ONLINE', 'ERRO', 'ERRO_SENHA', 'ERRO_NS'].includes(row.STATUS)) row.STATUS = 'DESCONHECIDO';
+
               return (
                 <TableRow hover key={row.CODTERMINAL} sx={{ '&:last-of-type td, &:last-of-type th': { border: 0 } }}>
                   <TableCell align='center'>{row.CODTERMINAL}</TableCell>
@@ -82,7 +84,7 @@ const DashboardTable = (props:any) => {
                   <TableCell align='center'>{row.QTDPEDESTRES}</TableCell>
                   <TableCell align='center'>
                     <Chip
-                      label={row.STATUS=='DESCONHECIDO' ? '?' : row.STATUS}
+                      label={row.STATUS == 'DESCONHECIDO' ? '?' : row.STATUS}
                       color={statusObj[row.STATUS].color}
                       sx={{
                         height: 24,
@@ -93,11 +95,12 @@ const DashboardTable = (props:any) => {
                     />
                   </TableCell>
                 </TableRow>
-            )})}
+              )
+            })}
           </TableBody>
         </Table>
       </TableContainer>
-    </Card>
+    </CardLayout>
   )
 }
 

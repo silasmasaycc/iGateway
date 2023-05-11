@@ -4,13 +4,13 @@ import { ThemeColor } from 'src/@core/layouts/types'
 
 const DefaultPalette = (mode: PaletteMode, themeColor: ThemeColor) => {
   // ** Vars
-  const lightColor = '58, 53, 65'
+  const lightColor = '58, 78, 110'
   const darkColor = '231, 227, 252'
   const mainColor = mode === 'light' ? lightColor : darkColor
 
   const primaryGradient = () => {
     if (themeColor === 'primary') {
-      return '#C6A7FE'
+      return '#2F4361'
     } else if (themeColor === 'secondary') {
       return '#9C9FA4'
     } else if (themeColor === 'success') {
@@ -37,7 +37,7 @@ const DefaultPalette = (mode: PaletteMode, themeColor: ThemeColor) => {
     mode: mode,
     primary: {
       light: '#9E69FD',
-      main: '#9155FD',
+      main: '#2F4361',
       dark: '#804BDF',
       contrastText: '#FFF'
     },
@@ -88,7 +88,7 @@ const DefaultPalette = (mode: PaletteMode, themeColor: ThemeColor) => {
       A700: '#303030'
     },
     text: {
-      primary: `rgba(${mainColor}, 0.87)`,
+      primary: `rgba(${mainColor}, 1)`,
       secondary: `rgba(${mainColor}, 0.68)`,
       disabled: `rgba(${mainColor}, 0.38)`
     },

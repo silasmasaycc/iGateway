@@ -1,16 +1,19 @@
 // ** MUI Imports
-import Card from '@mui/material/Card'
-import CardHeader from '@mui/material/CardHeader'
+// import Card from '@mui/material/Card'
+// import CardHeader from '@mui/material/CardHeader'
 
 // ** Demo Components Imports
+import CardLayout from 'src/@core/layouts/CardLayout'
 import LogsView from 'src/views/tables/LogsView'
 
 const LogsTable = () => {
   return (
-    <Card>
-      <CardHeader title='Logs' titleTypographyProps={{ variant: 'h6' }} />
-        <LogsView />
-    </Card>
+    <CardLayout header={{
+      title: 'Logs',
+      titleTypographyProps: { variant: 'h6' }
+    }}>
+      <LogsView />
+    </CardLayout>
   )
 }
 
